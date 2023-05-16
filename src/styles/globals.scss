@@ -1,0 +1,136 @@
+@import "unit";
+@import "../../public/fonts/font.css";
+
+:root {
+  --primary-color: #f7ac29;
+  --text-color: #041674;
+  --background-color: #f1f7ff;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Red Hat Display", -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+    sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+header {
+  height: rem(68) !important;
+}
+
+.main {
+  min-height: calc(100vh - rem(165));
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  font-family: "Inter", sans-serif;
+}
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+:focus,
+:active {
+  outline: none;
+}
+a:focus,
+a:active {
+  outline: none;
+}
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjusst: 100%;
+  -moz-text-size-adjusst: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+input:-ms-clear {
+  display: none;
+}
+button {
+  cursor: pointer;
+}
+button:-moz-focus-innesr {
+  padding: 0;
+  border: 0;
+}
+a,
+a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+ul li {
+  list-style: none;
+}
+img {
+  vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
+  .swiper-pagination {
+    position: relative;
+    top: 40px;
+    .swiper-pagination-bullet {
+      &-active {
+        background-color: var(--text-color);
+      }
+    }
+  }
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,134 @@
+@import "styles/unit.scss";
+
+.comments {
+  padding: rem(40) 0;
+  display: flex;
+  @include direction-column;
+  gap: rem(40);
+  color: var(--text-color);
+  
+  h4 {
+    font-size: rem(28);
+    line-height: rem(35);
+    display: flex;
+    align-items: center;
+  }
+  
+  &__card {
+    width: 75%;
+    padding: rem(20);
+    background: #ffffff;
+    box-shadow: rem(0) rem(2) rem(4) rgba(0, 0, 0, 0.075);
+    border-radius: rem(10);
+    margin: 0 auto;
+    
+    @media screen and (max-width: 530px) {
+      width: 100%;
+      margin: 0;
+    }
+
+    &__top {
+      @include justify-content-between;
+      @media screen and (max-width: 530px) {
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      &__item {
+        @include align-items-center;
+        gap: rem(12);
+        @media screen and (max-width: 530px) {
+          align-items: start;
+          justify-content: space-between;
+          padding: rem(10) 0;
+          flex-direction: column;
+        }
+
+        &__rating {
+          display: flex;
+          align-items: center;
+          gap: rem(5);
+          span {
+            color: #F7AC29;
+            font-family: 'Red Hat Display';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 19px;
+
+            @media screen and (max-width: 530px) {
+              font-size: 20px;
+              line-height: 18px;
+            }
+          }
+        }
+
+        input {
+          padding: rem(6) rem(12);
+          border: rem(1) solid #ced4da;
+          border-radius: rem(4);
+
+          @media screen and (max-width: 530px) {
+            width: 100%;
+          }
+        }
+      }
+    }
+    &__center {
+      padding: rem(12);
+      border: rem(1) solid #ced4da;
+      border-radius: rem(4);
+      height: rem(100);
+      textarea {
+        height: 100%;
+        width: 100%;
+        resize: none;
+      }
+    }
+
+    &__buttons {
+      @include justify-content-between;
+      align-items: flex-end;
+
+      @media screen and (max-width: 530px) {
+        align-items: start;
+        justify-content: space-between;
+        flex-direction: column;
+        gap: rem(16);
+      }
+
+      &__item {
+        @include align-items-center;
+        gap: rem(24);
+
+        @media screen and (max-width: 530px) {
+          width: 100%;
+          align-items: start;
+          justify-content: space-between;
+          padding: rem(10) 0;
+        }
+
+        button {
+          width: rem(91);
+          height: rem(31);
+          @media screen and (max-width: 530px) {
+            width: rem(132);
+            height: rem(31);
+          }
+        }
+      }
+    }
+  }
+
+  &__content {
+    @include direction-column;
+    gap: rem(16);
+  }
+
+  &__info {
+    width: 75%;
+    margin: 0 auto;
+    @include direction-column;
+    gap: rem(40);
+  }
+}

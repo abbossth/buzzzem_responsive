@@ -1,0 +1,6 @@
+@import "styles/unit.scss";
+
+.bloggerSingle {
+  @include direction-column;
+  gap: rem(40);
+}

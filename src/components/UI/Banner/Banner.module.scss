@@ -1,0 +1,183 @@
+@import "styles/unit.scss";
+
+.banner {
+  padding-top: rem(40);
+  background-color: var(--background-color);
+
+  &__content {
+    @include element-center;
+    flex-direction: column;
+    padding-top: rem(35);
+    gap: rem(16);
+
+    @media (max-width: 768px) {
+      padding-top: rem(20);
+    }
+
+    img {
+      @media (max-width: 768px) {
+        width: 100%;
+        max-height: 500px;
+        object-fit: cover;
+      }
+    }
+
+    h1 {
+      font-weight: 700;
+      font-size: 42px;
+      line-height: 55px;
+      text-align: center;
+      color: var(--text-color);
+      @media (max-width: 990px) {
+        font-size: 30px;
+        line-height: 35px;
+      }
+      @media (max-width: 480px) {
+        font-size: 24px;
+        line-height: 35px;
+      }
+    }
+    p {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 23px;
+      text-align: center;
+      color: rgba(4, 22, 116, 0.8);
+
+      @media (max-width: 990px) {
+        font-size: 16px;
+        line-height: 20px;
+      }
+      @media (max-width: 480px) {
+        font-size: 14px;
+        line-height: 18px;
+      }
+    }
+
+    &__search {
+      width: 60%;
+      @include justify-content-center;
+      flex-direction: column;
+      margin-top: rem(70);
+      gap: rem(16);
+      position: relative;
+
+      @media (max-width: 990px) {
+        width: 80%;
+      }
+      @media (max-width: 480px) {
+        width: 90%;
+      }
+
+      &__input {
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+        padding: 27px 16px 27px 32px;
+        background: #ffffff;
+        box-shadow: 0px 0px 64px rgba(4, 22, 116, 0.17);
+        border-radius: 100px;
+        font-weight: 300;
+        z-index: 1000;
+
+        input {
+          width: 75%;
+          font-size: 18px;
+          line-height: 24px;
+          letter-spacing: 0.02em;
+
+          &::placeholder {
+            font-size: 18px;
+            line-height: 24px;
+            letter-spacing: 0.02em;
+            color: #adb5bd;
+            @media (max-width: 990px) {
+              font-size: 16px;
+              line-height: 22px;
+            }
+            @media (max-width: 480px) {
+              font-size: 14px;
+              line-height: 20px;
+            }
+          }
+        }
+
+        &__button {
+          position: absolute;
+          right: rem(16);
+          top: 50%;
+          transform: translate(0%, -50%);
+        }
+      }
+      &__more {
+        @include align-items-center;
+        justify-content: flex-end;
+        color: var(--primary-color);
+
+        &__content {
+          @include align-items-center;
+          cursor: pointer;
+          gap: rem(10);
+        }
+        @media (max-width: 990px) {
+          justify-content: center;
+
+        }
+      }
+
+      &__items {
+        position: absolute;
+        z-index: 99999;
+        top: 110%;
+        width: 100%;
+        border-radius: 10px;
+        max-height: 400px;
+        overflow-y: scroll;
+        background: rgba(255, 255, 255, 0.4);
+        box-shadow: 0px 4px 24px rgba(4, 22, 116, 0.08);
+        backdrop-filter: blur(12px);
+        ::-webkit-scrollbar {
+          width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+          width: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+          width: 10px;
+        }
+
+        &__card {
+          border: 1px solid red;
+          padding: 8px 16px;
+          border: 1px solid #e7f1ff;
+          width: 100%;
+          @include align-items-center;
+          gap: rem(32);
+          cursor: pointer;
+
+          img {
+            max-width: rem(80);
+            min-width: rem(80);
+            max-height: rem(80);
+            min-height: rem(80);
+            border-radius: 50%;
+            object-fit: cover;
+          }
+
+          h2 {
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 26px;
+            color: var(--text-color);
+          }
+        }
+      }
+    }
+  }
+}
+
+.arcuate {
+  clip-path: ellipse(50% 71% at 50% 0%);
+  background-color: var(--background-color);
+  height: 100px;
+}

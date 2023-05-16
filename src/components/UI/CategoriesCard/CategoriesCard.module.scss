@@ -1,0 +1,30 @@
+@import "styles/unit.scss";
+
+.card {
+  padding: 16px 24px;
+  background: #ffffff;
+  border: 1px solid #e7f1ff;
+  border-radius: 10px;
+  width: 155px;
+  height: 112px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  &:hover {
+    transform: scale(1.05);
+  }
+  @include element-center;
+  flex-direction: column;
+  gap: rem(16);
+
+  img {
+    width: rem(40);
+    height: rem(40);
+    object-fit: cover;
+  }
+  h5 {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    color: var(--text-color);
+  }
+}

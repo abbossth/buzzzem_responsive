@@ -1,0 +1,28 @@
+@import "styles/unit.scss";
+
+.categories {
+  padding: rem(40) 0;
+
+  .wrapper {
+    width: 100%;
+    @include direction-column;
+    gap: rem(0);
+
+    .wrap__marquee {
+      @include align-items-center;
+      gap: rem(16);
+      overflow: hidden;
+      &:first-child {
+        padding: rem(10) 0;
+      }
+
+      &:last-child {
+        padding: rem(10) 0;
+      }
+    }
+    .marquee {
+      @include align-items-center;
+      gap: rem(22);
+    }
+  }
+}

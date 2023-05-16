@@ -1,0 +1,82 @@
+@import "styles/unit.scss";
+
+.info {
+  display: flex;
+  gap: rem(32);
+
+  .image {
+    min-width: rem(50);
+    max-width: rem(50);
+    min-height: rem(50);
+    max-height: rem(50);
+    border-radius: 50%;
+    @include element-center;
+    color: #fff;
+  }
+
+  &__content {
+    width: 100%;
+    @include direction-column;
+    gap: rem(18);
+
+    h3 {
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 26px;
+      color: var(--text-color);
+    }
+
+    &__rating {
+      @include align-items-center;
+      gap: rem(16);
+
+      &__item {
+        @include align-items-center;
+        gap: rem(8);
+
+        span {
+          color: var(--primary-color);
+        }
+      }
+      &__platform {
+        p {
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 19px;
+          color: var(--text-color);
+          span {
+            color: var(--primary-color);
+          }
+        }
+      }
+    }
+
+    &__information {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 21px;
+      color: var(--text-color);
+    }
+
+    &__bottom {
+      @include justify-content-between;
+      align-items: center;
+
+      &__like {
+        @include align-items-center;
+        gap: rem(32);
+
+        &__item {
+          @include align-items-center;
+          gap: rem(8);
+          cursor: pointer;
+        }
+      }
+
+      &__report {
+        @include align-items-center;
+        gap: rem(10);
+      }
+    }
+  }
+}

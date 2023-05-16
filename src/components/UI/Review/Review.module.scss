@@ -1,0 +1,15 @@
+@import "styles/unit.scss";
+
+.review {
+  background-color: var(--background-color);
+  padding: rem(40) 0;
+
+  &__content {
+    font-size: 32px;
+    line-height: 42px;
+    text-align: center;
+    color: var(--text-color);
+    @include direction-column;
+    gap: rem(32);
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "jsx": "preserve",
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "rootDir": "src",
+    "noEmit": true,
+    "experimentalDecorators": true,
+    "strictNullChecks": true,
+    "noImplicitThis": true,
+    "noImplicitAny": false,
+    // "suppressImplicitAnyIndexErrors": true,
+    "downlevelIteration": true
+  },
+  "include": ["./src"],
+  "exclude": ["node_modules"]
+}

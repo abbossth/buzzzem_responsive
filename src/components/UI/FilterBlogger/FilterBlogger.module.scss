@@ -1,0 +1,22 @@
+@import "styles/unit.scss";
+
+.filter {
+  width: 100%;
+  padding: 40px 24px;
+  @include direction-column;
+  gap: rem(24);
+  position: relative;
+
+  .menuCloseBtn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  h3 {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 120%;
+    color: var(--text-color);
+  }
+}

@@ -1,0 +1,114 @@
+@import "styles/unit.scss";
+
+.main {
+  display: flex;
+  gap: rem(32);
+
+  &__img {
+    max-width: rem(200);
+    min-width: rem(200);
+    max-height: rem(200);
+    min-height: rem(200);
+    border-radius: 50%;
+
+    object-fit: cover;
+  }
+
+  &__content {
+    @include justify-content-between;
+    width: 100%;
+
+    @media screen and (max-width: 768px) {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+    
+    &__blogger {
+      &__info {
+        display: flex;
+        gap: rem(32);
+
+        @media screen and (max-width: 768px) {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    }
+
+    &__left {
+      @include direction-column;
+      gap: rem(12);
+
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      &__info {
+        @include align-items-center;
+        gap: rem(4);
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 21px;
+        color: #7b87b9;
+      }
+
+      &__name {
+        @include align-items-center;
+        gap: rem(40);
+
+        h2 {
+          font-weight: 600;
+          font-size: 32px;
+          line-height: 42px;
+          color: var(--text-color);
+        }
+      }
+      &__buttons {
+        @include align-items-center;
+        gap: rem(12);
+      }
+    }
+
+    &__right {
+      // @include justify-content-center;
+      flex-direction: column;
+      gap: rem(8);
+
+      @media screen and (max-width: 768px) {
+      display: flex;
+      justify-content: space-around;
+      flex-direction: row-reverse;
+    }
+
+      &__item {
+        @include align-items-center;
+        gap: rem(4);
+
+        &__rating {
+          @include element-center;
+          position: relative;
+          color: var(--primary-color);
+
+          h6 {
+            position: absolute;
+            font-size: 24px;
+            line-height: 32px;
+            display: flex;
+          }
+        }
+      }
+
+      h5 {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 24px;
+        text-decoration-line: underline;
+        color: var(--text-color);
+        @media screen and (max-width: 768px) {
+          @include align-items-center;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,116 @@
+# Default values for microservice.                                                                                                         
+# This is a YAML-formatted file.                                                                                                           
+# Declare variables to be passed into your templates.                                                                                      
+global:                                                                                                                                    
+  replicaCount: 1                                                                                                                          
+  environment: {}
+   # list of key: value                                                                                                                    
+   # GLOBAL1: value                                                                                                                        
+                                                                                                                                           
+replicaCount: 1                                                                                                                            
+                                                                                                                                           
+image:                                                                                                                                     
+  registry: gitlab.udevs.io:5050/                                                                                                          
+  repository: editory/editory_frontend
+  pullPolicy: IfNotPresent                                                                                                                 
+  # Overrides the image tag whose default is the chart appVersion.                                                                         
+  tag: "test"                                                                                                                            
+                                                                                                                                           
+imagePullSecrets: "gitlab-registry"                                                                                                        
+nameOverride: ""                                                                                                                           
+fullnameOverride: ""                                                                                                                       
+labels:
+  app: frontend                                                                                                                                          
+# command: ["/bin/sh","-c"]                                                                                                                
+# args: ["echo 'consuming a message'; sleep 5"]                                                                                            
+                                                                                                                                                                                                                                                                                      
+serviceAccount:                                                                                                                            
+  # Specifies whether a service account should be created                                                                                                                                                                                                                             
+  create: true
+  # Annotations to add to the service account                                                                                                                                                                                                                                         
+  annotations: {}                                                                                                                                                                                                                                                                     
+  # The name of the service account to use.                                                                                                
+  # If not set and create is true, a name is generated using the fullname template                                                                                                                                                                                                    
+  name: "vault-auth"                                                                                                                                 
+                                                                                                                                            
+podLabels:
+  app: nextjs-frontend
+
+podSecurityContext: {}                                                                                  
+  # fsGroup: 2000                                                                                                                                                                                               
+                                                                                                                                                                                                                
+securityContext: {}                                                                                                                                                                                             
+  # capabilities:                                                                                                                                                                                               
+  #   drop:                                                                                                                                
+  #     - ALL                                                                                                                              
+  # readOnlyRootFilesystem: true                                                                        
+  # runAsNonRoot: true                                                                                                                     
+  # runAsUser: 1000                                                                                     
+vault: {}                                                                                                                                    
+#   enabled: false
+#   secretName: vault-secrets                                                                                                                
+#   variables:                                                                                                                               
+#     VAULT_TOKEN: vault_token                                                                                                               
+#     SECRETS_PATH: vault_admin_api_gateway_path                                                                                                           
+
+environment: {}
+volumes:                                                                                                                                   
+  enabled: false                                                                                                                           
+  pvc:                                                                                                                                     
+    enabled: false                                                                                                                         
+    existing_claim:                                                                                                                                                                                                                                                                   
+    name: pvc                                                                                                                              
+    mountPath: /pv                                                                                      
+    size: 1G                                                                                            
+    class:                                                                                              
+    accessModes:                                                                                        
+      - ReadWriteOnce                                                                                   
+                                                                                                        
+service:                                                                                                
+  type: ClusterIP                                                                                       
+  annotations: {}                                                                                       
+  specs:
+    - port: 80                                                                                                                             
+      targetPort: 3000                                                                                                                     
+      name: https                                                                                                                           
+
+ingress: {}
+    # enabled: true
+    # rules:
+    #   - annotations:
+    #       kubernetes.io/ingress.class: nginx
+    #       cert-manager.io/cluster-issuer: letsencrypt-prod
+    #     type: web
+    #     hosts:                                                                                                                                   
+    #       - host: "medion.udevs.io"
+    #         path: /                                                                                                                              
+    #         servicePort: 80                                                                                              
+
+resources: {}                                                                                                    
+  #  limits:                                                                                                                                
+  #    cpu: 150m                                                                                                                          
+  #    memory: 256Mi                                                                                                                        
+  #  requests:                                                                                                                              
+  #    cpu: 100m                                                                                                                            
+  #    memory: 200Mi                                                                                                                        
+
+autoscaling:                                                                                                                               
+  enabled: false                                                                                                                           
+  minReplicas: 1                                                                                                                           
+  maxReplicas: 100                                                                                                                         
+  targetCPUUtilizationPercentage: 80                                                                                                       
+  # targetMemoryUtilizationPercentage: 80                                                                                                  
+
+nodeSelector: {}                                                                                                                           
+
+tolerations: []                                                                                                                            
+
+affinity:                                                                                                                                  
+  nodeAffinity:                                                                                                                            
+    requiredDuringSchedulingIgnoredDuringExecution:                                                                                        
+      nodeSelectorTerms:                                                                                                                   
+        - matchExpressions:                                                                                                                
+            - key: apps
+              operator: In                                                                                                                 
+              values:                                                                                                                      
+                - "true"  

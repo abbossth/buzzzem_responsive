@@ -1,0 +1,17 @@
+@import "styles/unit.scss";
+
+.line {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.label {
+  @include justify-content-between;
+  align-items: center;
+
+  h2 {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 140%;
+    color: #adb5bd;
+  }
+}

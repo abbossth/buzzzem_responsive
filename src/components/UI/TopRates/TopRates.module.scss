@@ -1,0 +1,19 @@
+@import "styles/unit.scss";
+
+.rates {
+  padding: rem(40) 0;
+  @include direction-column;
+  gap: rem(32);
+
+  h2 {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 42px;
+    text-align: center;
+    color: #041674;
+  }
+
+  &__more {
+    @include element-center;
+  }
+}

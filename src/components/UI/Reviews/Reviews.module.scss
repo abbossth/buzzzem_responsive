@@ -1,0 +1,52 @@
+@import "styles/unit.scss";
+
+.reviews {
+  padding: rem(40) 0;
+  display: flex;
+  align-items: flex-start;
+  gap: rem(60);
+  color: var(--text-color);
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    
+  }
+
+  h4 {
+    font-size: 28px;
+    line-height: 35px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__cards {
+    width: 100%;
+    margin-top: rem(60);
+    display: flex;
+    justify-content: center;
+    @media screen and (max-width: 768px) {
+      margin-top: 0; 
+    }
+  }
+  &__single {
+    @include align-items-center;
+    gap: rem(12);
+
+    h6 {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      // width: 30%;
+      @media screen and (max-width: 768px) {
+        width: 30%;
+      }
+    }
+
+    h2 {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 150%;
+      color: #198754;
+    }
+  }
+}

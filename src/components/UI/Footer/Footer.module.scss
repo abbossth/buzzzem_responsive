@@ -1,0 +1,46 @@
+@import "styles/unit.scss";
+
+.footer {
+  padding: 32px;
+  background: #f1f7ff;
+  position: relative;
+  z-index: 9999;
+
+  &__content {
+    @include justify-content-between;
+    align-items: center;
+
+    span {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 21px;
+      color: #7b87b9;
+      font-style: italic;
+    }
+
+    ul {
+      @include align-items-center;
+      gap: rem(50);
+      li {
+        list-style: none;
+        cursor: pointer;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 21px;
+        color: var(--text-color);
+      }
+
+      @media (max-width: 990px) {
+        display: none;
+      }
+    }
+  }
+  &__icons {
+    @include align-items-center;
+    gap: rem(30);
+    cursor: pointer;
+    a {
+      cursor: pointer;
+    }
+  }
+}

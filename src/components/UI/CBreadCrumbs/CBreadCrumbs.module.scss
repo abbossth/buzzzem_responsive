@@ -1,0 +1,25 @@
+@import "styles/unit.scss";
+
+.crumpsRoot {
+  padding-top: rem(34);
+  .breadcrumb {
+    color: var(--text-color);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+
+    cursor: pointer;
+    &__last {
+      cursor: unset;
+      color: #adb5bd;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .crumpsRoot {
+    .breadcrumb {
+      font-size: 14px;
+    }
+  }
+}
