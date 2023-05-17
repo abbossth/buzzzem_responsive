@@ -24,7 +24,7 @@ const BloggerCards = ({ open, bloggers, setSearchTerm }) => {
         <div className={styles.search} onClick={() => inputRef.current.focus()}>
           <input
             type="text"
-            placeholder="Search"
+            placeholder="Search" 
             ref={inputRef}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
@@ -34,7 +34,7 @@ const BloggerCards = ({ open, bloggers, setSearchTerm }) => {
 
       <Grid container rowSpacing={{ xs: 4  }} columnSpacing={{ xs: 2 }}>
         {bloggers?.map((el) => (
-          <Grid item xs={6} sm={6} md={open ? 4 : 3} lg={open ? 3 : 2.4} key={el.slug}>
+          <Grid item xs={6} sm={6} md={3} lg={3} key={el.slug}>
             <BloggerCard
               avg_rate={el?.avg_rate}
               categories={el?.categories}

@@ -13,8 +13,10 @@ import {
 import { useSelector } from "react-redux";
 import { useDebounce } from "utils/useDebounce";
 import CRating from "components/UI/Rating/Rating";
+import { Hidden } from "@mui/material";
 
-const drawerWidth = 260;
+const drawerWidth = 230;
+
 
 const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(
   ({ theme, open }) => ({
@@ -95,7 +97,7 @@ export default function Blogger() {
   const { data: RatingCountRangeOption } = UseGetRatingsCountRange({
     queryParams: "",
   });
-
+  console.log('options', RatingCountRangeOption);
   const ratingOptions = (options) => {
     const optionArr = [];
     for (let range in options) {
@@ -110,39 +112,46 @@ export default function Blogger() {
 
   return (
     <Box sx={{ display: "flex" }}>
-      <Drawer
-        sx={{
-          width: drawerWidth,
-          flexShrink: 0,
-          "& .MuiDrawer-paper": {
+      <div style={{
+        position: 'absolute'
+      }}> 
+        <Drawer
+          sx={{
             width: drawerWidth,
-            boxSizing: "border-box",
-            padding: "4.25rem 0",
-          },
-        }}
-        variant="persistent"
-        anchor="left"
-        open={open}
-      >
-        <FilterBlogger
-          select={select}
-          setSelect={setSelect}
-          languagesOption={languagesOption}
-          CountrySelect={CountrySelect}
-          setGender={setGender}
-          gender={gender}
-          CategoriesOption={CategoriesOption}
-          ratingOptions={ratingOptions(RatingCountRangeOption)}
-          checkedCategory={checkedCategory}
-          checkedPlatform={checkedPlatform}
-          checkedRating={checkedRating}
-          setCheckedCategory={setCheckedCategory}
-          setCheckedPlatform={setCheckedPlatform}
-          setCheckedRating={setCheckedRating}
-          PlatformsOption={PlatformsOption}
-        />
-      </Drawer>
-      <Main open={open}>
+            flexShrink: 0,
+            "& .MuiDrawer-paper": {
+              width: drawerWidth,
+              boxSizing: "border-box",
+              padding: "4.25rem 0",
+            },
+          }}
+          variant="persistent"
+          anchor="left"
+          open={open}
+        >
+          <FilterBlogger
+            select={select}
+            setSelect={setSelect}
+            languagesOption={languagesOption}
+            CountrySelect={CountrySelect}
+            setGender={setGender}
+            gender={gender}
+            CategoriesOption={CategoriesOption}
+            ratingOptions={ratingOptions(RatingCountRangeOption)}
+            checkedCategory={checkedCategory}
+            checkedPlatform={checkedPlatform}
+            checkedRating={checkedRating}
+            setCheckedCategory={setCheckedCategory}
+            setCheckedPlatform={setCheckedPlatform}
+            setCheckedRating={setCheckedRating}
+            PlatformsOption={PlatformsOption}
+          />
+        </Drawer>
+      </div>
+      <Main open={open} style={{
+        width: '100%',
+        marginLeft: '0px', 
+      }}>
         <BloggerCards
           open={open}
           bloggers={bloggersData}

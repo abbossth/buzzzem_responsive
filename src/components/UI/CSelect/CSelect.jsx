@@ -28,6 +28,7 @@ export default function CSelect({
         border: "1px solid #CED4DA !important",
         borderRadius: "4px !important",
         height: "38px !important",
+        outline: 'none'
       }}
       IconComponent={() => <DownArrow width="20" height="20" />}
     >
